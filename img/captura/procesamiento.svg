@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="m" data-name="Layer 14" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <style>
+      .o {
+        stroke: #8593a9;
+      }
+
+      .o, .p {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .p {
+        stroke: #ff2038;
+      }
+    </style>
+  </defs>
+  <g id="n" data-name="People_Strategy-1">
+    <g>
+      <g>
+        <polygon class="p" points="59 74 45 66.8 45 50 59 57.2 59 74"/>
+        <polygon class="p" points="59 74 73 66.8 73 50 59 57.2 59 74"/>
+        <polyline class="p" points="73 50 59 42 45 50"/>
+        <path class="o" d="m40.43,100v-20.05c-11.92-11.25-12.64-30.21-1.59-42.35,5.58-6.13,13.42-9.61,21.62-9.6,23.57,0,27.73,20.8,36.53,43.2h-9.43v9.6c0,5.3-4.22,9.6-9.43,9.6h-4.71v9.6"/>
+      </g>
+      <circle class="o" cx="64" cy="64" r="63"/>
+    </g>
+  </g>
+</svg>
