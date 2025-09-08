@@ -1,246 +1,672 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
-    <title>ECMSoft - Captura de Datos</title>
+    <title>ECMSoft - Captura Inteligente de Datos</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="Captura de Datos, OCR, Inteligencia Artificial, Automatización de Documentos" name="keywords">
+    <meta
+        content="Transformamos documentos en datos estructurados con IA. Extraemos información de facturas, contratos y más con un 99% de precisión."
+        name="description">
 
     <!-- Favicon -->
     <link href="img/prueba ECM/ecmsoft-favicon.ico" rel="icon">
 
-   <!-- Google Web Fonts -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
-       rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
 
-   <!-- Icon Font Stylesheet -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
 
-   <!-- Libraries Stylesheet -->
-   <link href="lib/animate/animate.min.css" rel="stylesheet">
-   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
 
-   <!-- Customized Bootstrap Stylesheet -->
-   <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-   <!-- Template Stylesheet -->
-   <link href="css/style.css" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
 
+    <!-- === INICIO: ESTILOS PERSONALIZADOS PARA ESTA PÁGINA === -->
+    <style>
+        /* Estilo para los nuevos iconos de beneficios */
+        .benefit-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
 
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: #062B75;
+        }
 
-<!--Carousel-->
-<!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  -->  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <style>
-    /* Make the image fully responsive */
-    .carousel-inner img {
-        width: 100%;
-        height: 10%;
-       
+        .benefit-item:hover .benefit-icon-wrapper {
+            background-color: #062B75;
+            border-color: #fff;
+        }
+
+        .benefit-item:hover .benefit-icon {
+            color: #fff;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 25px;
+            width: 2px;
+            height: 100%;
+            background: #e9ecef;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 60px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 20px 30px;
+            border-radius: .5rem;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .why-us-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-us-list i {
+            font-size: 1.5rem;
+            color: #0d6efd;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        @media (min-width: 768px) {
+            .timeline::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .timeline-item {
+                width: 50%;
+                padding-left: 0;
+            }
+
+            .timeline-item:nth-child(odd) {
+                padding-right: 40px;
+                text-align: right;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 50%;
+                padding-left: 40px;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-icon {
+                right: -25px;
+                left: auto;
+            }
+
+            .timeline-item:nth-child(even) .timeline-icon {
+                left: -25px;
+            }
+        }
+
+        .tech-logo {
+            height: 80px;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .tech-logo:hover {
+            opacity: 1;
+        }
+
+        .use-case-table {
+            border-radius: .5rem;
+            overflow: hidden;
+        }
+
+        .final-cta {
+            position: relative;
+            background: url('img/captura/cta-background.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(6, 43, 117, 0.85);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(6, 43, 117, 0.05);
+            color: #062B75;
+        }
+
+        .section-with-shapes {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg-shape {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.05;
+            background-color: #062B75;
+        }
+
+        .bg-shape-light {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.08;
+        }
+
+        .bg-shape.shape-1 {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            right: 5%;
+            border-radius: 50%;
+        }
+
+        .bg-shape.shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -50px;
+            transform: rotate(45deg);
+        }
+
+        .bg-shape.shape-3 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            left: 10%;
+            border-radius: 20%;
+        }
+
+        .bg-shape-light.shape-1 {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            right: 5%;
+            background-image: radial-gradient(circle, #fff 10%, transparent 11%);
+            background-size: 15px 15px;
+        }
+
+        .bg-shape-light.shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -50px;
+            background: linear-gradient(45deg, transparent 49%, #fff 49%, #fff 51%, transparent 51%);
+            background-size: 20px 20px;
+        }
+
+        @media (max-width: 768px) {
+
+            .bg-shape,
+            .bg-shape-light {
+                display: none;
+            }
+        }
+
+        /* === NUEVOS ESTILOS PARA LA LÍNEA DE TIEMPO AZUL === */
+    .timeline-icon-alt {
+        position: absolute;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        background: #fff; /* Fondo blanco */
+        color: #0d6efd; /* Icono azul */
+        border: 2px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        z-index: 1;
+        transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover .timeline-icon-alt {
+        background: #0d6efd; /* Invierte colores al pasar el mouse */
+        color: #fff;
+    }
+
+    /* Ajuste para que la línea central de la timeline sea visible sobre el fondo azul */
+    .bg-primary .timeline::before {
+        background: rgba(255, 255, 255, 0.25);
+    }
+    
+    /* Reglas para Desktop (manteniendo la simetría) */
+    @media (min-width: 768px) {
+        .timeline-item:nth-child(odd) .timeline-icon-alt {
+            right: -25px;
+            left: auto;
+        }
+        .timeline-item:nth-child(even) .timeline-icon-alt {
+            left: -25px;
+        }
     }
     </style>
-
+    <!-- === FIN: ESTILOS PERSONALIZADOS === -->
 </head>
 
 <body>
     <!-- Spinner Start -->
     <div id="spinner"
         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status"><span
+                class="sr-only">Cargando...</span></div>
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
-    <div class="container-fluid bg-primary sticky-top">
+    <div class="container-fluid  bg-primary sticky-top">
         <div class="container bg-primary">
-            <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-0">
-              
-                <a href="index.html" class="navbar-brand">
-                 
-                    <h1 class="text-white">ECMSoft<span class="text-dark"></span></h1>
-                </a>
-                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <nav class="navbar navbar-expand-lg bg-primary navbar-dark p-0"><a href="index.html" class="navbar-brand">
+                    <h1 class="text-white">ECMSoft</h1>
+                </a><button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Inicio</a>
-                        
-                  
-                      
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Servicios</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a href="ecmsoftware.html"
-                                    class="dropdown-item active">Software Elo</a>
-                                <a href="firmadigital.html" class="dropdown-item">Firma Electrónica</a>
-                                <a href="digitalizacion.html" class="dropdown-item">Digitalización de Documentos </a>
-                                <a href="captura.html" class="dropdown-item">Captura de Datos</a>
-                                <a href="rpa.html" class="dropdown-item">Automatizacion Robotica (RPA)</a>
-                                <a href="Desarrollo.html" class="dropdown-item">Desarrollo de aplicaciones</a>
-                            </div>
-                        </div>
-
-                            <a href="contact.html" class="nav-item nav-link">Contactanos</a>
-                 
+                    <div class="navbar-nav ms-auto"><a href="index.html" class="nav-item nav-link">Inicio</a>
+                        <div class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle active"
+                                data-bs-toggle="dropdown">Servicios</a>
+                            <div class="dropdown-menu bg-light mt-2"><a href="ecmsoftware.html"
+                                    class="dropdown-item">Software ELO</a><a href="firmadigital.html"
+                                    class="dropdown-item">Firma Electrónica</a><a href="digitalizacion.html"
+                                    class="dropdown-item">Digitalización de Documentos</a><a href="captura.html"
+                                    class="dropdown-item active">Captura de Datos</a><a href="rpa.html"
+                                    class="dropdown-item">Automatización Robótica (RPA)</a><a href="Desarrollo.html"
+                                    class="dropdown-item">Desarrollo de Aplicaciones</a></div>
+                        </div><a href="contact.html" class="nav-item nav-link">Contáctanos</a>
+                    </div>
                 </div>
             </nav>
         </div>
     </div>
     <!-- Navbar End -->
 
-
-
-<!-- Captura  -->
-
-<div class="container-fluid bg-primary overflow-hidden  px-lg-0">
-    <div class="container feature px-lg-0">
-       
-        <div class="row g-0 mx-lg-0">
-            <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.7s">
-                <div class="p-lg-5 ps-lg-0">
-                    <div class="bg-primary mb-3" style="width: 60px; height: 2px;"></div>
-                    <h1 class="display-5 mb-5 " style="color:white;">Procesa, valida y extrae los datos desde cualquier documento</h1>
-                    <p class="mb-4 pb-2" style="color:white;">Implica capturar información relevante,
-                         como texto, números, imágenes o códigos, y transformarla en un formato estructurado
-                          y legible por máquina.
-                        <br>
-                        <br>
-                        Por ejemplo: Extraer información clave de  facturas,
-                          como el número de factura, la fecha, el monto y la dirección.</p>
-                    
+    <!-- Hero Section Start -->
+    <div class="container-fluid bg-primary overflow-hidden px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0 align-items-center">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-lg-5 ps-lg-0 text-center text-lg-start">
+                        <h1 class="display-4 text-white fw-bold mb-4">Automatización Inteligente de Documentos</h1>
+                        <p class="lead text-white-50 mb-5">Transformamos cualquier documento en datos estructurados con
+                            una precisión de hasta el 99%, liberando a su equipo de tareas manuales y repetitivas.</p><a
+                            href="contact.html" class="btn btn-outline-light rounded-pill py-3 px-5">Solicitar Demo
+                            Gratuita</a>
+                    </div>
                 </div>
-            </div>
-            <div class=" ecm col-lg-6 pe-lg-0" style=" border-collapse: collapse;" data-wow-delay="0.7s">
-                <div class="position-relative h-100">
-                    <img class="position-absolute img-fluid " src="img/captura/capatura_2-removebg-preview.png" style="object-fit: cover;" alt="">
+                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 350px;">
+                    <div class="position-relative h-100"><img class="img-fluid position-lg-absolute w-100 h-100"
+                            src="img/captura/capatura_2-removebg-preview.png" style="object-fit: contain;"
+                            alt="Captura inteligente de datos"></div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Captura End -->
+    <!-- Hero Section End -->
 
-      <!-- Beneficios Start -->
-      <div class="container-fluid  feature  py-5" id="Servicios">
+    <!-- === INICIO: SECCIÓN "BENEFICIOS" REDISEÑADA === -->
+    <div class="container-fluid feature py-5 section-with-shapes">
+        <div class="bg-shape-grey shape-1"></div>
+        <div class="bg-shape-grey shape-2"></div>
         <div class="container py-5">
-            <div class="col-lg-12 wow fadeIn" data-wow-delay="0.1s">
-                
-                <h1 class="mb-4" style="color: black; border: black; text-align: center;">Procesamiento de documentos más eficiente</h1>
-                <p class="mb-4 bg" style="color: black; border: black;">En esta era digital, en la que es posible que los documentos en papel ya se hayan transferido a formato digital, pero ahora, la verdadera eficiencia proviene de la automatización de flujos de trabajo que respalde los procesos comerciales.</p>
-              
-            </div> 
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h1 class="display-6 mb-3 text-black">Más Allá del OCR Tradicional: Entendemos sus Documentos</h1>
+                <p class="text-black-50">Nuestra tecnología de IA no solo "lee" los documentos, sino que comprende el
+                    contexto para extraer la información que realmente importa.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="benefit-item text-center h-100">
+                        <div class="benefit-icon-wrapper mx-auto mb-4">
+                            <i class="bi bi-patch-check-fill benefit-icon"></i>
+                        </div>
+                        <h5 class="mb-3 text-black">99% de Precisión</h5>
+                        <p class="text-black-50">Obtenga datos confiables y precisos, eliminando los errores de la
+                            transcripción manual y mejorando la calidad de su información.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="benefit-item text-center h-100">
+                        <div class="benefit-icon-wrapper mx-auto mb-4">
+                            <i class="bi bi-speedometer2 benefit-icon"></i>
+                        </div>
+                        <h5 class="mb-3 text-black">80% Menos Tiempo</h5>
+                        <p class="text-black-50">Reduzca drásticamente el tiempo dedicado al procesamiento de documentos
+                            y permita que su equipo se enfoque en tareas de mayor valor.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="benefit-item text-center h-100">
+                        <div class="benefit-icon-wrapper mx-auto mb-4">
+                            <i class="bi bi-tags-fill benefit-icon"></i>
+                        </div>
+                        <h5 class="mb-3 text-black">Clasificación Automática</h5>
+                        <p class="text-black-50">El sistema identifica y organiza automáticamente los documentos por
+                            tipo (facturas, contratos, etc.) y genera metadatos enriquecidos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- === FIN: SECCIÓN "BENEFICIOS" REDISEÑADA === -->
+
+    <!-- Metodología MEJORADA Start -->
+  <!-- === INICIO: SECCIÓN "PROCESO DE IMPLEMENTACIÓN" (DISEÑO FINAL) === -->
+<div class="container-fluid feature py-5 bg-primary section-with-shapes">
+    <!-- Figuras decorativas de fondo -->
+    <div class="bg-shape-light shape-1"></div>
+    <div class="bg-shape-light shape-2"></div>
+
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+            <h1 class="display-6 mb-3 text-white">Nuestro Proceso de Implementación</h1>
+            <p class="text-white-50">Le acompañamos en cada paso para garantizar una transición fluida y resultados desde el primer día.</p>
+        </div>
+        <div class="timeline">
+            <!-- Paso 1 -->
+            <div class="timeline-item wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="timeline-icon-alt"><i class="bi bi-search"></i></div>
+                <div class="timeline-content">
+                    <h5><i class="bi bi-clipboard-data me-2"></i>Análisis Inicial</h5>
+                    <p class="text-muted mb-0">Evaluamos sus tipos de documentos, flujos de trabajo actuales y definimos los campos clave a extraer para diseñar una solución a su medida.</p>
+                </div>
+            </div>
+            <!-- Paso 2 -->
+            <div class="timeline-item wow fadeInRight" data-wow-delay="0.3s">
+                <div class="timeline-icon-alt"><i class="bi bi-sliders"></i></div>
+                <div class="timeline-content">
+                    <h5><i class="bi bi-gear me-2"></i>Configuración Personalizada</h5>
+                    <p class="text-muted mb-0">Entrenamos y ajustamos nuestros modelos de Inteligencia Artificial específicamente para la estructura y particularidades de sus documentos.</p>
+                </div>
+            </div>
+            <!-- Paso 3 -->
+            <div class="timeline-item wow fadeInLeft" data-wow-delay="0.4s">
+                <div class="timeline-icon-alt"><i class="bi bi-puzzle-fill"></i></div>
+                <div class="timeline-content">
+                    <h5><i class="bi bi-plug me-2"></i>Implementación e Integración</h5>
+                    <p class="text-muted mb-0">Integramos la solución de captura de forma transparente con sus sistemas existentes (ERP, CRM, Gestores Documentales) y flujos de trabajo.</p>
+                </div>
+            </div>
+            <!-- Paso 4 -->
+            <div class="timeline-item wow fadeInRight" data-wow-delay="0.5s">
+                <div class="timeline-icon-alt"><i class="bi bi-graph-up-arrow"></i></div>
+                <div class="timeline-content">
+                    <h5><i class="bi bi-arrow-repeat me-2"></i>Monitoreo y Optimización Continua</h5>
+                    <p class="text-muted mb-0">Supervisamos el rendimiento para asegurar la máxima precisión y optimizamos los modelos a medida que surgen nuevos tipos de documentos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- === FIN: SECCIÓN "PROCESO DE IMPLEMENTACIÓN" === -->
+    <!-- Metodología MEJORADA End -->
+
+    <!-- Tecnología y Casos de Uso Start -->
+    <div class="container-fluid feature py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h1 class="display-6 mb-3">Tecnología de Vanguardia para cada Industria</h1>
+                <p>Utilizamos las plataformas de IA más avanzadas del mercado para ofrecer soluciones robustas y
+                    escalables, adaptadas a los casos de uso específicos de su sector.</p>
+            </div>
+            <div class="row g-4 justify-content-center text-center mb-5 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-6 col-sm-4 col-md-2"><img src="img/captura/A.png" class="img-fluid tech-logo"
+                        alt="Azure Document Intelligence"></div>
+                <div class="col-6 col-sm-4 col-md-2"><img src="img/captura/amazon.jpg" class="img-fluid tech-logo"
+                        alt="AWS Textract"></div>
+                <div class="col-6 col-sm-4 col-md-2"><img src="img/captura/google.png" class="img-fluid tech-logo"
+                        alt="Google Document AI"></div>
+                <div class="col-6 col-sm-4 col-md-2"><img src="img/captura/gpt.webp" class="img-fluid tech-logo"
+                        alt="GPT-4 Vision"></div>
+            </div>
+            <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-10">
+                    <div class="table-responsive use-case-table">
+                        <table class="table table-striped table-hover text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Sector</th>
+                                    <th scope="col">Documentos Clave</th>
+                                    <th scope="col">Beneficio Principal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Contabilidad</td>
+                                    <td>Facturas, recibos, estados financieros</td>
+                                    <td>Conciliación y auditoría automática</td>
+                                </tr>
+                                <tr>
+                                    <td>Legal</td>
+                                    <td>Contratos, expedientes, documentos legales</td>
+                                    <td>Búsqueda y clasificación inteligente</td>
+                                </tr>
+                                <tr>
+                                    <td>Salud</td>
+                                    <td>Historiales, resultados, formularios</td>
+                                    <td>Digitalización y consulta de historiales</td>
+                                </tr>
+                                <tr>
+                                    <td>Logística</td>
+                                    <td>Órdenes, manifiestos, guías de envío</td>
+                                    <td>Trazabilidad y validación automática</td>
+                                </tr>
+                                <tr>
+                                    <td>RR.HH.</td>
+                                    <td>CVs, formularios de alta, evaluaciones</td>
+                                    <td>Gestión ágil de expedientes de personal</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Tecnología y Casos de Uso End -->
+
+    <!-- NUEVA SECCIÓN: ¿Por Qué Elegirnos? -->
+    <div class="container-fluid feature  py-5 bg-primary section-with-shapes">
+        <div class="bg-shape shape-3"></div>
+        <div class="container py-5">
             <div class="row g-5 align-items-center">
-                
-                <div class="col-lg-12">
-                    <div class="row g-4">
-                        <div class="col-md-4 pt-md-4">
-                            <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.1s" >
-                                    <div class="service-item d-flex flex-column justify-content-center text-center rounded card h-70 w-100" style="box-shadow: 5px 7px 7px gray;">
-                                        <div class="service-icon btn-square">
-                                            <img src="img/captura/error.png" class=" rounded-circle d-flex flex-column align-self-center"  style="width: 70px; height: 70px; border-radius: 5%;">
-                                        </div>
-                                        <h5 class="mb-3">Minimiza errores</h5>
-                                        <p style="text-align: justify;">
-                                             Nuestra innovadora tecnología ofrece información precisa y en tiempo real, erradicando posibles
-                                              errores humanos y agilizando el proceso de toma de decisiones obteniendo la mejor opcion para tu empresa.
-                                         
-                                        </p>
-                                     
-                                    </div>
-                                    
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
-                                    <div class=" service-item d-flex flex-column justify-content-center text-center  card h-70 w-100" style="box-shadow: 5px 7px 7px gray;">
-                                        <div class="service-icon btn-square">
-                                            <img src="img/captura/multiple.png" class=" rounded-circle d-flex flex-column align-self-center"  style="width: 70px; height: 70px; border-radius: 5%;">
-                                        </div>
-                                        <h5 class="mb-3">Captura de Datos desde Múltiples Orígenes</h5>
-                                        <p style="text-align: justify;">Ofrecemos soluciones avanzadas de captura de datos que permiten
-                                             recopilar información precisa y relevante desde una variedad de fuentes de entrada. 
-                                             Nuestra plataforma está diseñada para capturar datos de manera eficiente y segura, 
-                                             independientemente de su origen
-                                        </p>
-                                       
-                                       
-                                    </div>
-                                </div>
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <h1 class="display-6 mb-4 text-white">La Ventaja de Trabajar con Expertos</h1>
+                    <p class="mb-4 text-white">No solo ofrecemos tecnología, ofrecemos resultados. Nuestra experiencia y enfoque en
+                        el cliente garantizan que su inversión en automatización se traduzca en un retorno medible y
+                        significativo para su negocio.</p>
+                    <ul class="list-unstyled why-us-list">
+                        <li><i class="bi bi-award"></i>
+                            <div >
+                                <h5 class="text-white">Experiencia Comprobada</h5>
+                                <p class="text-white  mb-0">Años de experiencia implementando soluciones de
+                                    automatización de documentos en diversas industrias.</p>
+                            </div>
+                        </li>
+                        <li><i class="bi bi-cash-coin"></i>
+                            <div>
+                                <h5 class="text-white" >ROI Garantizado en Menos de 6 Meses</h5>
+                                <p class="text-white mb-0">Nuestras soluciones están diseñadas para generar ahorros y
+                                    eficiencias que se reflejan rápidamente en sus finanzas.</p>
+                            </div>
+                        </li>
+                        <li><i class="bi bi-headset"></i>
+                            <div>
+                                <h5 class="text-white">Soporte Técnico Especializado</h5>
+                                <p class="text-white mb-0">Un equipo de expertos a su disposición para asegurar el
+                                    funcionamiento óptimo de la solución en todo momento.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.5s">
+                    <div class="position-relative"><img src="img/expertos2.jpg" class="img-fluid rounded"
+                            alt="Equipo de expertos en automatización"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN NUEVA SECCIÓN: ¿Por Qué Elegirnos? -->
+
+    <!-- ============================================================================== -->
+    <!--  AQUÍ COMIENZA LA SECCIÓN DE ABBYY FLEXI CAPTURE (SIN CAMBIOS)                 -->
+    <!-- ============================================================================== -->
+    <div class="container-fluid feature pt-5 py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-6">Nuestra Tecnología Aliada: Abbyy FlexiCapture</h1>
+                </div>
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.3s">
+                    <div class="ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/2eAUNURAl1M"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe></div>
+                </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.5s">
+                    <p class="mb-0" style="text-align: justify;">Para proyectos que requieren una plataforma robusta y
+                        probada, nos apoyamos en ABBYY, líder mundial en Procesamiento Inteligente de Documentos (IDP).
+                        Sus soluciones emplean IA diseñada específicamente para la empresa, transformando datos de
+                        cualquier documento, en cualquier formato o idioma.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-primary feature py-5">
+        <div class="container py-5">
+            <h1 class="mb-5 text-center text-white wow fadeInUp" data-wow-delay="0.1s">¿Por qué confiamos en Abbyy?</h1>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="d-flex flex-column text-center h-100"><img src="img/captura/confiable.svg"
+                            alt="Confiable" class="bg-white rounded-circle mx-auto mb-3"
+                            style="width: 80px; height: 80px; padding: 15px;">
+                        <h5 class="mb-3 text-white">Confiable</h5>
+                        <p class="text-white-50">Más de 10.000 clientes empresariales, incluidos muchos de Fortune 500,
+                            confían en ABBYY sus documentos críticos para el negocio.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="d-flex flex-column text-center h-100"><img src="img/captura/innovador.svg"
+                            alt="Innovador" class="bg-white rounded-circle mx-auto mb-3"
+                            style="width: 80px; height: 80px; padding: 15px;">
+                        <h5 class="mb-3 text-white">Innovador</h5>
+                        <p class="text-white-50">Con 30 años de experiencia, su plataforma low-code/no-code no tiene
+                            rival en la cantidad de tipos de documentos, formatos e idiomas que admite.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="d-flex flex-column text-center h-100"><img src="img/captura/transformador.svg"
+                            alt="Transformador" class="bg-white rounded-circle mx-auto mb-3"
+                            style="width: 80px; height: 80px; padding: 15px;">
+                        <h5 class="mb-3 text-white">Transformador</h5>
+                        <p class="text-white-50">Sus clientes experimentan una productividad hasta un 400% mayor, un 95%
+                            de automatización y un ROI garantizado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NUEVA SECCIÓN: Preguntas Frecuentes (FAQ) -->
+    <div class="container-fluid feature py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h1 class="display-6 mb-3">Preguntas Frecuentes</h1>
+                <p>Resolvemos sus dudas para que pueda tomar la mejor decisión.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="accordion" id="accordionFAQ">
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                            <h2 class="accordion-header" id="h1"><button class="accordion-button" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#c1" aria-expanded="true"
+                                    aria-controls="c1">¿Qué tipos de documentos pueden procesar?</button></h2>
+                            <div id="c1" class="accordion-collapse collapse show" aria-labelledby="h1"
+                                data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">Podemos procesar prácticamente cualquier tipo de documento
+                                    estructurado o semi-estructurado, incluyendo facturas, órdenes de compra, contratos,
+                                    albaranes, formularios de solicitud, CVs, reportes médicos, y muchos más. Adaptamos
+                                    nuestros modelos a sus documentos específicos.</div>
                             </div>
                         </div>
-                        <div class="col-md-4 pt-md-4">
-                            <div class="row g-4">
-                                <div class="col-12  wow fadeIn" data-wow-delay="0.3s">
-                                    <div class="service-item d-flex flex-column justify-content-center text-center rounded card h-70 w-100" style="box-shadow: 5px 7px 7px gray;">
-                                        <div class="service-icon btn-square">
-                                            <img src="img/captura/fisico.webp" class=" rounded-circle d-flex flex-column align-self-center"  style="width: 70px; height: 70px; border-radius: 5%;">
-                                        </div>
-                                        <h5 class="mb-3">Captura desde Datos Físicos</h5>
-                                        <p style="text-align: justify;">Extraer datos de documentos físicos de manera rápida y precisa.
-                                             Desde facturas hasta formularios, nuestra solución puede procesar una amplia gama de documentos 
-                                             para extraer la información clave que tu empresa necesita.
-                              
-                                        </p>
-                                       
-                                        
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.7s">
-                                    <div class="service-item d-flex flex-column justify-content-center text-center rounded card h-70 w-100" style="box-shadow: 5px 7px 7px gray; ">
-                                        <div class="service-icon btn-square">
-                                            <img src="img/captura/correo.jpg" class=" rounded-circle d-flex flex-column align-self-center"  style="width: 70px; height: 70px; border-radius: 5%;">
-                                        </div>
-                                        <h5 class="mb-3">Captura desde Correos Electrónicos</h5>
-                                        <br>
-                                        <p style="text-align: justify;">Nuestra plataforma puede integrarse con tu sistema de correo electrónico para capturar automáticamente datos relevantes de los mensajes entrantes y salientes.
-                                        </p>
-                                       
-                                    </div>
-                                </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
+                            <h2 class="accordion-header" id="h2"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#c2" aria-expanded="false"
+                                    aria-controls="c2">¿Qué nivel de precisión puedo esperar?</button></h2>
+                            <div id="c2" class="accordion-collapse collapse" aria-labelledby="h2"
+                                data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">Nuestras soluciones alcanzan una precisión de hasta el 99%
+                                    en la extracción de datos. Para los casos excepcionales o documentos de muy baja
+                                    calidad, implementamos flujos de validación humana para asegurar que el 100% de su
+                                    información sea correcta antes de integrarse a sus sistemas.</div>
                             </div>
                         </div>
-                        <div class="col-md-4 pt-md-4">
-                            <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
-                                    <div class="service-item d-flex flex-column justify-content-center text-center rounded card h-70 w-100" style="box-shadow: 5px 7px 7px gray;">
-                                        <div class="service-icon btn-square">
-                                            <img src="img/captura/web.png" class=" rounded-circle d-flex flex-column align-self-center"  style="width: 70px; height: 70px; border-radius: 5%;">
-                                        </div>
-                                        <h5 class="mb-3">Captura desde Páginas Web</h5>
-                                        <p style="text-align: justify;">Con nuestra solución de captura de datos, puedes extraer fácilmente información
-                                             específica de páginas web y bases de datos en línea, lo que te permite acceder a datos actualizados y 
-                                             relevantes para tu negocio.
-                                        </p>
-                                       
-                                    </div>
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.7s">
-                                    <div class="service-item d-flex flex-column justify-content-center text-center rounded card h-70 w-100" style="box-shadow: 5px 7px 7px gray;">
-                                        <div class="service-icon btn-square">
-                                            <img src="img/captura/movil.jpg" class=" rounded-circle d-flex flex-column align-self-center"  style="width: 70px; height: 70px; border-radius: 5%;">
-                                        </div>
-                                        <h5 class="mb-3">Captura desde Moviles</h5>
-                                        <p style="text-align: justify;">Los dispositivos móviles generan una gran cantidad de datos, desde la ubicación
-                                             geográfica hasta el comportamiento del usuario en aplicaciones y sitios web móviles. Capturar y analizar 
-                                             estos datos puede proporcionar información valiosa sobre los patrones de comportamiento del cliente y
-                                              las oportunidades de compromiso.
-                                        </p>
-                                        
-                                    </div>
-                                </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+                            <h2 class="accordion-header" id="h3"><button class="accordion-button collapsed"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#c3" aria-expanded="false"
+                                    aria-controls="c3">¿Cómo garantizan la seguridad y confidencialidad de mis
+                                    datos?</button></h2>
+                            <div id="c3" class="accordion-collapse collapse" aria-labelledby="h3"
+                                data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body">La seguridad es nuestra máxima prioridad. Trabajamos con
+                                    plataformas cloud líderes (Azure, AWS) que cumplen con los más altos estándares de
+                                    seguridad y normativas de protección de datos (GDPR, ISO 27001). Todos los datos se
+                                    transmiten y almacenan de forma encriptada.</div>
                             </div>
                         </div>
                     </div>
@@ -248,166 +674,73 @@
             </div>
         </div>
     </div>
-    <!-- Beneficios End -->
+    <!-- FIN NUEVA SECCIÓN: Preguntas Frecuentes (FAQ) -->
 
- 
- <!-- Que es Abby  -->
- <div class="container-fluid  feature pt-5 py-2   ">
-    <section  class="home" >
-       
-            <div class="container align-items-center">
-                <div class="row g-5 align-items-center">
-                    <h1 style="text-align: center;">¿Que es Abbyy Flexi Capture?</h1>
-                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
-                        <iframe width="450" height="315" src="https://www.youtube.com/embed/2eAUNURAl1M" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen class="responsive-embed"></iframe>
-                        
-                          
-                    </div>
-                    <div class="col-lg-6  wow fadeIn" data-wow-delay="0.5s">
-                        <br>
-                       
-                        
-                        <p class="mb-lg-5 " style="text-align: justify;">Ayudamos a empresas y organizaciones a transformar sus datos en resultados
-                             inteligentes y procesables, para que puedan tomar decisiones inteligentes más rápido y generar mejores resultados. 
-                             Nuestras soluciones de automatización inteligente emplean IA diseñada específicamente para la empresa, creada pensando
-                              en nuestros clientes. El procesamiento inteligente de documentos de ABBYY transforma datos de cualquier documento, 
-                              en cualquier formato o idioma, en cualquier momento, en datos que impulsan los procesos y la toma de decisiones. 
-                              ABBYY Process Intelligence ofrece información relacionada con los procesos para mejorar la ejecución de los procesos de negocio.
-                         </p>
-                        
-                    
-                       
-                    </div>
-                </div>
-            </div>
-        
-        
-    </section>
-</div>
-<!-- Que es Abby End -->
-
-<!-- Por que Abby capture End -->   
-<div class="container-fluid bg-primary  feature   pt-2 py-2   ">
-    
-    <div class="container pt-2">
-        <div class="row g-2">
-            <h1 class="mb-3 align-self-center" style="color:white;text-align: center;"> ¿Por qué usar Abbyy Capture? </h1>
-            
-        
-            <div class="col-md-12 align-self-center mb-md-5 pb-md-5 wow fadeIn" data-wow-delay="0.3s">
-                 <div class="row g-4 pt-3">
-                 
-                     <div class="col-sm-4 wow fadeIn " data-wow-delay="0.7s">
-                        <div class=" d-flex flex-column justify-content-center text-center rounded py-2"  >
-                            <img src="img/captura/confiable.svg" alt="" class="btn-square bg-white rounded-circle d-flex flex-column align-self-center" style="width: 64px; height: 64px;">
-                            <h5 class="mb-3" style="color: white;">Confiable</h5>
-                            <p style="color: white;margin-left: 20px; margin-right: 20px;">Más de 10.000 clientes empresariales, incluidos muchos de 
-                                Fortune 500, confían en ABBYY sus documentos críticos para el negocio. La comunidad de analistas sigue nombrando a ABBYY 
-                                como líder del mercado en procesamiento inteligente de documentos. </p>
-                               
-                        </div>
-                    </div>
-                    <div class="col-sm-4 wow fadeIn align-self-center" data-wow-delay="0.7s">
-                        <div class=" d-flex flex-column justify-content-center text-center rounded py-2"  >
-                            <img src="img/captura/innovador.svg" class="btn-square bg-white rounded-circle d-flex flex-column align-self-center"  style="width: 64px; height: 64px; border-radius: 5%;">
-                            <h5 class="mb-3" style="color: white;">Innovador</h5>
-                            <p style="color: white; margin-left: 20px; margin-right: 20px;">Ofrecemos soluciones que agilizan los flujos de trabajo, reducen
-                                ABBYY modernizó el mercado de IDP con su plataforma low-code/no-code. Después de 30 años, no tenemos rival en la cantidad de tipos de documentos, formatos e idiomas que admitimos.
-                                </p>
-                               
-                        </div>
-                    </div>
-                    <div class="col-sm-4 wow fadeIn " data-wow-delay="0.7s">
-                        <div class=" d-flex flex-column justify-content-center text-center rounded py-2"  >
-                            <img src="img/captura/transformador.svg" alt="" class="btn-square bg-white rounded-circle d-flex flex-column align-self-center" style="width: 64px; height: 64px;">
-                            <h5 class="mb-3" style="color: white;">Transformador </h5>
-                            <p style="color: white; margin-left: 20px; margin-right: 20px;">Ofrecemos resultados más rápidos, más sólidos y con un 
-                                menor costo de procesamiento. Nuestros clientes experimentan una 
-                                productividad de los empleados un 400 % mayor, un 95 % de automatización  y  
-                                oportunidades de ahorro de costos.
-                                </p>
-                               
-                        </div>
-                    </div>
-                   
-                   
-                   
-                 </div>
-             </div>
-
-        
+    <!-- Final CTA Start -->
+    <div class="container-fluid feature bg-primary  py-5">
+        <div class="container py-5 text-center" style="position: relative; z-index: 2;">
+            <div class="wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="display-6 text-white mb-4">¿Listo para liberar a su equipo de tareas repetitivas?</h1>
+                <p class="lead text-white-50 mx-auto mb-5" style="max-width: 800px;">Transforme su gestión documental en
+                    30 días. Analizamos sus documentos sin costo y le mostramos el potencial de la automatización. Sin
+                    riesgos, con resultados garantizados.</p><a href="contact.html"
+                    class="btn btn-outline-light rounded-pill py-3 px-5 me-3 mb-3">Solicitar Demo Gratuita</a>
+                    <a href="contact.html" class="btn btn-outline-light rounded-pill py-3 px-5 mb-3">Hablar con un
+                    Especialista</a>
             </div>
         </div>
-    </div> 
-<!-- Por que Abby capture End -->
+    </div>
+    <!-- Final CTA End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5">
         <div class="container py-5">
             <div class="row g-5">
-              
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Contacto</h5>
-                 
                     <p><i class="fa fa-phone-alt me-3"></i>+56 981896990</p>
                     <p><i class="fa fa-envelope me-3"></i>contacto@ecmsoft.cl</p>
-                    <div class="d-flex pt-2">
-                       
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                    
-                        <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/ecmsoft/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+                    <div class="d-flex pt-2"><a class="btn btn-outline-light btn-social" href=""><i
+                                class="fab fa-youtube"></i></a><a class="btn btn-outline-light btn-social"
+                            href="https://www.linkedin.com/company/ecmsoft/" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a></div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <h5 class="text-white mb-4">ECMSoft</h5>
-                    <a class="btn btn-link" href="index.html#Acercade">Acerca de Nosotros</a>
-                    <a class="btn btn-link" href="index.html#contacto">Contacto</a>
-                    <a class="btn btn-link" href="index.html#Servicios">Servicios</a>
-                  
-                   
-                  
+                    <h5 class="text-white mb-4">ECMSoft</h5><a class="btn btn-link" href="index.html#Acercade">Acerca de
+                        Nosotros</a><a class="btn btn-link" href="index.html#contacto">Contacto</a><a
+                        class="btn btn-link" href="index.html#Servicios">Servicios</a>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <h5 class="text-white mb-4">Servicios</h5>
-                    <a class="btn btn-link" href="ecmsoftware.html">Software Elo</a>
-                    <a class="btn btn-link" href="firmadigital.html">Firma Electrónica</a>
-                    <a class="btn btn-link" href="digitalizacion.html">Digitalización de Documentos</a>
-                    <a class="btn btn-link" href="captura.html">Captura de Datos</a>
-                    <a class="btn btn-link" href="rpa.html">Automatización Robotica (RPA)</a>
-                    <a class="btn btn-link" href="Desarrollo.html">Desarrollo e Integración</a>
+                    <h5 class="text-white mb-4">Servicios</h5><a class="btn btn-link" href="ecmsoftware.html">Software
+                        ELO</a><a class="btn btn-link" href="firmadigital.html">Firma Electrónica</a><a
+                        class="btn btn-link" href="digitalizacion.html">Digitalización de Documentos</a><a
+                        class="btn btn-link" href="captura.html">Captura de Datos</a><a class="btn btn-link"
+                        href="rpa.html">Automatización Robotica (RPA)</a><a class="btn btn-link"
+                        href="Desarrollo.html">Desarrollo de Aplicaciones</a>
                 </div>
             </div>
         </div>
         <div class="container wow fadeIn" data-wow-delay="0.1s">
             <div class="copyright">
                 <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.html">ECMSoft</a>, Todos los derechos reservados 2024.
-
-                        </a>
-                    </div>
-                
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">&copy; <a class="border-bottom"
+                            href="index.html">ECMSoft</a>, Todos los derechos reservados 2024.</div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
 
-
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
