@@ -231,6 +231,32 @@
         border-color: #ffffff;
       }
     }
+
+      .hero-feature-item { display: flex; align-items: center; margin-bottom: 1rem; }
+
+         /* === ESTILOS PARA EL MARCO DE IMAGEN === */
+    .image-frame {
+        background-color: #fff;
+        padding: 1rem; /* Borde blanco alrededor de la imagen */
+        border-radius: 0.75rem; /* Puntas redondeadas del marco */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 450px; /* Evita que sea demasiado grande en pantallas anchas */
+        margin: auto;
+    }
+
+    .zoom-container {
+        overflow: hidden; /* Recorta cualquier desborde */
+        border-radius: 0.5rem; /* Redondea las esquinas de la imagen interior */
+        background-color: #f8f9fa; /* Color de fondo por si la imagen no carga */
+    }
+
+    .zoomed-image {
+        /* Se ha eliminado 'transform: scale(1.1);' para quitar el zoom */
+        transition: transform 0.5s ease;
+        display: block;
+        width: 100%;
+    }
     </style>
 </head>
 
@@ -270,15 +296,18 @@
     <!-- Navbar End -->
 
    <!-- Inicio ELO Hero Section -->
+<!-- === INICIO: SECCIÓN HERO CON IMAGEN AJUSTADA === -->
 <div class="container-fluid bg-primary overflow-hidden px-lg-0">
     <div class="container feature px-lg-0">
         <div class="row g-0 mx-lg-0 align-items-center">
-            <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+
+            <!-- Columna de Texto (ahora col-lg-7) -->
+            <div class="col-lg-7 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
                 <div class="p-lg-5 ps-lg-0">
                     <h1 class="display-5 mb-4 text-white">Software ELO ECM Suite</h1>
                     <p class="mb-4 pb-2 text-white" style="text-align: justify;">Centralice, gestione y asegure toda la información de su empresa. Con ELO, transforme sus documentos en activos valiosos, automatice sus flujos de trabajo y fomente la colaboración en un entorno 100% digital.</p>
                     <div class="row g-4">
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <div class="hero-feature-item">
                                 <div class="btn-square bg-white rounded-circle flex-shrink-0" style="width: 60px; height: 60px;"><i class="bi bi-folder-check fa-2x text-primary"></i></div>
                                 <div class="ms-3">
@@ -286,7 +315,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <div class="hero-feature-item">
                                 <div class="btn-square bg-white rounded-circle flex-shrink-0" style="width: 60px; height: 60px;"><i class="bi bi-diagram-3 fa-2x text-primary"></i></div>
                                 <div class="ms-3">
@@ -294,7 +323,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <div class="hero-feature-item">
                                 <div class="btn-square bg-white rounded-circle flex-shrink-0" style="width: 60px; height: 60px;"><i class="bi bi-shield-lock fa-2x text-primary"></i></div>
                                 <div class="ms-3">
@@ -302,7 +331,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-md-6">
                             <div class="hero-feature-item">
                                 <div class="btn-square bg-white rounded-circle flex-shrink-0" style="width: 60px; height: 60px;"><i class="bi bi-search fa-2x text-primary"></i></div>
                                 <div class="ms-3">
@@ -314,18 +343,22 @@
                 </div>
             </div>
             
-            <!-- === SECCIÓN DE IMAGEN CORREGIDA === -->
-           <div class="col-lg-6 pe-lg-0 wow fadeIn position-relative" data-wow-delay="0.5s" style="min-height: 450px;">
-    <!-- La imagen (hijo) con 'position-absolute' ahora se anclará correctamente a su padre con 'position-relative'. -->
-    <img class="position-absolute w-100 h-100" 
-         src="img/elof.png"
-         style="object-fit: cover; border-radius: .5rem;" 
-         alt="Gestión documental profesional con ELO">
-</div>
+            <!-- Columna de Imagen (ahora col-lg-5) -->
+            <div class="col-lg-5 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px;">
+                <!-- El marco blanco que contiene la imagen -->
+                <div class="image-frame h-100 d-flex align-items-center justify-content-center">
+                    <!-- El contenedor que recorta la imagen -->
+                    <div class="zoom-container">
+                        <!-- La imagen en sí, sin el efecto de zoom -->
+                        <img class="zoomed-image" src="img/elof.jpg" alt="ELO Certified Business Partner">
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
+<!-- === FIN: SECCIÓN HERO === -->
 <!-- Inicio ELO Hero Section End -->
 
     <!-- Porque ELO Section -->
@@ -670,9 +703,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 text-center mt-5 wow fadeInUp" data-wow-delay="0.6s"><a href="contact.html"
-                    class="btn btn-primary btn-lg rounded-pill px-5 py-3" role="button">Solicite una Demostración</a>
-            </div>
+            <div class="container-button" style="text-align: center;">
+                                <a href="contact.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Pide una demostración</a>
+                              </div>
         </div>
     </div>
     <!-- FAQ Section End -->
@@ -684,7 +717,7 @@
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Contacto</h5>
                     <p><i class="fa fa-phone-alt me-3"></i>+56 981896990</p>
-                    <p><i class="fa fa-envelope me-3"></i>contacto@ecmsoft.cl</p>
+                    <p><i class="fa fa-envelope me-3"></i>hola@ecmsoft.cl</p>
                     <div class="d-flex pt-2"><a class="btn btn-outline-light btn-social" href=""><i
                                 class="fab fa-youtube"></i></a><a class="btn btn-outline-light btn-social"
                             href="https://www.linkedin.com/company/ecmsoft/" target="_blank"><i
@@ -692,7 +725,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <h5 class="text-white mb-4">ECMSoft</h5><a class="btn btn-link" href="index.html#Acercade">Acerca de
-                        Nosotros</a><a class="btn btn-link" href="index.html#contacto">Contacto</a><a
+                        Nosotros</a><a class="btn btn-link" href="contact.html">Contacto</a><a
                         class="btn btn-link" href="index.html#Servicios">Servicios</a>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
